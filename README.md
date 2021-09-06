@@ -6,6 +6,8 @@ In order to the run the program you need to have `requests` libraries, if you do
 terminal/shell 
 `pip3 install requests`
 
+You need to get a free/paid API key from https://numverify.com and paste that on **LINE 19**
+
 and then simply cd into the directory and run the program, like you would any python program.
 
 This is a GUI based program.
