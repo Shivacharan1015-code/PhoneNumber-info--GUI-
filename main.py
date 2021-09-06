@@ -16,7 +16,7 @@ def errorWindow():
 
 def getInfo():
     number = input.get()
-    key = 'b11d27f9ae8ebea1b3691547f92de923'
+    key = 'Paste your API key here'
     response = requests.get("http://apilayer.net/api/validate?access_key={}&number={}".format(key,number))
 
     json_data = json.loads(response.text)
