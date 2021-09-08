@@ -62,6 +62,11 @@ def searchall():
         response = requests.get("http://apilayer.net/api/validate?access_key={0}&number={1}&country_code={2}".format(key,number,j))
         json_data = json.loads(response.text)
         print(j)
+        per = ((i+1)/total) * 100
+        progress['value'] = per
+        track = Label(root,text="Country Code= "+j +", " + str(per)+ "%")
+        track.grid(row=2,column=2)
+        root.update()
         try:
             valid = json_data['valid']
             if valid:
@@ -86,8 +91,7 @@ def searchall():
         except:
             continue
 
-        progress['value'] = int(((i+1)/total) * 100)
-        root.update()
+        
 
     progress['value'] = 100
 
@@ -96,11 +100,12 @@ input = Entry(root,width=30,borderwidth=5,fg="white",bg="Black")
 input2 = Entry(root,width=30,borderwidth=5,fg="white",bg="black")
 searchButton = Button(root,text="Search",command=getInfo,padx=30,pady=10)
 progress = ttk.Progressbar(root,orient=HORIZONTAL,length=290,mode="determinate")
-searchall = Button(root,text="Search entire data",padx=30,pady=10,command=searchall)
+searchallb = Button(root,text="Search entire data",padx=30,pady=10,command=searchall)
+
 input.grid(row=0,column=0,columnspan=2)
 searchButton.grid(row=0,column=2)
 input2.grid(row=1,column=0,columnspan=2)
-searchall.grid(row=1,column=2)
+searchallb.grid(row=1,column=2)
 progress.grid(row=2,column=0,rowspan=2)
 
 
