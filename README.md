@@ -2,7 +2,7 @@
 
 This is a simple code, which lets you enter a phone number and it returns the some basic info about such as 'country' , 'location' , 'carrier'
 
-In order to the run the program you need to have `requests` libraries, if you dont have those libraries installed run the following commands in your 
+In order to the run the program you need to have `requests` library, if you dont have this library installed run the following commands in your 
 terminal/shell 
 `pip3 install requests`
 
