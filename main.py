@@ -9,6 +9,8 @@ from requests.models import codes
 root = Tk()
 root.title("Search Window")
 
+key = "3571a8faed7ec669e14681644fbbbe96"
+
 def errorWindow():
     subroot2 = Tk()
     subroot2.title("Error Window")
@@ -19,9 +21,9 @@ def errorWindow():
 
 
 def getInfo():
+    global key
     number = input.get()
-    key = 'Paste your API key here'
-    response = requests.get("http://apilayer.net/api/validate?access_key={}&number={}&country_code=IN".format(key,number))
+    response = requests.get("http://apilayer.net/api/validate?access_key={}&number={}".format(key,number))
 
     json_data = json.loads(response.text)
     try:
@@ -51,14 +53,14 @@ def getInfo():
         errorWindow()
 
         
-codes = ["AF","AL","DZ","AS","AD","AO","AI","AQ","AG","AR","AM","AW","AC","AU","AT","AZ","BS","BH","BD","BB","BY","BE","BZ","BJ","BM","BT","BO","BA","BW","BR","VG","BN","BG","BF","MM","BI","KH","CM","CA","CV","KY","CF","TD","CL","CN","CO","KM","CG","CD","CK","CR","CL","HR","CU","CY","CZ","DK","DJ","DM","DO","EC","EG","SV","GQ","ER","EE","ET","FK","FO","FJ","FI","FR","GF","PF","GA","GM","GE","DE","GH","GI","GR","GL","GD","GP","GU","GT","GN","GW","GY","HT","VA","HN","HK","HU","IS","IN","ID","IR"]    
+codes = ["AF","AL","DZ","AS","AD","AO","AI","AQ","AG","AR","AM","AW","AC","AU","AT","AZ","BS","BH","BD","BB","BY","BE","BZ","BJ","BM","BT","BO","BA","BW","BR","VG","BN","BG","BF","MM","BI","KH","CM","CA","CV","KY","CF","TD","CL","CN","CO","KM","CG","CD","CK","CR","CL","HR","CU","CY","CZ","DK","DJ","DM","DO","EC","EG","SV","GQ","ER","EE","ET","FK","FO","FJ","FI","FR","GF","PF","GA","GM","GE","DE","GH","GI","GR","GL","GD","GP","GU","GT","GN","GW","GY","HT","VA","HN","HK","HU","IS","IN","ID","IR","IQ","IE","IL","IT","JM","JP","JO","JO","KZ","KE","KI","KR","KW","KG","LA","LV","LB","LS","LR","LY","LI","LT","LU","MO","MK","MG","MW","MY","MV","ML","MT","MH","MQ","MR","MU"]    
 # codes = ["AF","AL","DZ","AS","AD","AO","AI","AQ"]
 total = len(codes)
 def searchall():
+    global key
     number = input2.get()
     for i,j in enumerate(codes):
         time.sleep(2)
-        key = 'Paste your API key here'
         response = requests.get("http://apilayer.net/api/validate?access_key={0}&number={1}&country_code={2}".format(key,number,j))
         json_data = json.loads(response.text)
         print(j)
