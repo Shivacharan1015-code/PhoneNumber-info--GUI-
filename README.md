@@ -8,6 +8,8 @@ terminal/shell
 
 You need to get a free/paid API key from https://numverify.com and paste that on **LINE 23** and **LINE 61**
 
+***Note: If you get a free API key, then you can make only 250 requests per month, so avoid using 'search all data'*** 
+
 and then simply cd into the directory and run the program, like you would any python program.
 
 This is a GUI based program.
