@@ -9,7 +9,7 @@ from requests.models import codes
 root = Tk()
 root.title("Search Window")
 
-key = "3571a8faed7ec669e14681644fbbbe96"
+key = "Paste your API key here"
 
 def errorWindow():
     subroot2 = Tk()
