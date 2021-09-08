@@ -64,7 +64,7 @@ def searchall():
         print(j)
         per = ((i+1)/total) * 100
         progress['value'] = per
-        track = Label(root,text="Country Code= "+j +", " + str(per)+ "%")
+        track = Label(root,text="Country Code= "+j +", " + str("%.2f" % per + "%"))
         track.grid(row=2,column=2)
         root.update()
         try:
