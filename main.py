@@ -1,7 +1,10 @@
 from tkinter import *
+from tkinter import ttk
 import json
 import requests
 import time
+
+from requests.models import codes
 
 root = Tk()
 root.title("Search Window")
@@ -17,8 +20,8 @@ def errorWindow():
 
 def getInfo():
     number = input.get()
-    key = 'Paste your API Key here'
-    response = requests.get("http://apilayer.net/api/validate?access_key={}&number={}".format(key,number))
+    key = 'Paste your API key here'
+    response = requests.get("http://apilayer.net/api/validate?access_key={}&number={}&country_code=IN".format(key,number))
 
     json_data = json.loads(response.text)
     try:
@@ -48,16 +51,17 @@ def getInfo():
         errorWindow()
 
         
-    
-
+codes = ["AF","AL","DZ","AS","AD","AO","AI","AQ","AG","AR","AM","AW","AC","AU","AT","AZ","BS","BH","BD","BB","BY","BE","BZ","BJ","BM","BT","BO","BA","BW","BR","VG","BN","BG","BF","MM","BI","KH","CM","CA","CV","KY","CF","TD","CL","CN","CO","KM","CG","CD","CK","CR","CL","HR","CU","CY","CZ","DK","DJ","DM","DO","EC","EG","SV","GQ","ER","EE","ET","FK","FO","FJ","FI","FR","GF","PF","GA","GM","GE","DE","GH","GI","GR","GL","GD","GP","GU","GT","GN","GW","GY","HT","VA","HN","HK","HU","IS","IN","ID","IR"]    
+# codes = ["AF","AL","DZ","AS","AD","AO","AI","AQ"]
+total = len(codes)
 def searchall():
-    num1 = input2.get()
-    for i in range(1,100):
-        number = str(i) + num1
-        key = 'Paste your API Key here'
-        response = requests.get("http://apilayer.net/api/validate?access_key={}&number={}".format(key,number))
+    number = input2.get()
+    for i,j in enumerate(codes):
+        time.sleep(2)
+        key = 'Paste your API key here'
+        response = requests.get("http://apilayer.net/api/validate?access_key={0}&number={1}&country_code={2}".format(key,number,j))
         json_data = json.loads(response.text)
-        print(i)
+        print(j)
         try:
             valid = json_data['valid']
             if valid:
@@ -77,24 +81,27 @@ def searchall():
                 carrierLabel.grid(row=2,column=0)
                 loactionLabel.grid(row=2,column=1)
                 print("Sucess")
-                time.sleep(5) 
+                
 
         except:
             continue
 
-        
+        progress['value'] = int(((i+1)/total) * 100)
+        root.update()
 
-
+    progress['value'] = 100
 
 
 input = Entry(root,width=30,borderwidth=5,fg="white",bg="Black")
 input2 = Entry(root,width=30,borderwidth=5,fg="white",bg="black")
 searchButton = Button(root,text="Search",command=getInfo,padx=30,pady=10)
+progress = ttk.Progressbar(root,orient=HORIZONTAL,length=290,mode="determinate")
 searchall = Button(root,text="Search entire data",padx=30,pady=10,command=searchall)
 input.grid(row=0,column=0,columnspan=2)
 searchButton.grid(row=0,column=2)
 input2.grid(row=1,column=0,columnspan=2)
 searchall.grid(row=1,column=2)
+progress.grid(row=2,column=0,rowspan=2)
 
 
 
