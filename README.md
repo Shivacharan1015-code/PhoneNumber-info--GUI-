@@ -6,7 +6,7 @@ In order to the run the program you need to have `requests` libraries, if you do
 terminal/shell 
 `pip3 install requests`
 
-You need to get a free/paid API key from https://numverify.com and paste that on **LINE 23** and **LINE 61**
+You need to get a free/paid API key from https://numverify.com and paste that on **LINE 12**
 
 ***Note: If you get a free API key, then you can make only 250 requests per month, so avoid using 'search all data'*** 
 
