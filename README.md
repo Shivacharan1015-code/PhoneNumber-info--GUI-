@@ -1,4 +1,5 @@
 
+
 # PhoneNumber-info--GUI-
 
 This is a simple code, which lets you enter a phone number and it returns the some basic info about such as 'country' , 'location' , 'carrier'
@@ -15,4 +16,4 @@ and then simply cd into the directory and run the program, like you would any py
 
 This is a GUI based program.
 
-[1.pdf](https://github.com/Shivacharan1015-code/PhoneNumber-info-GUI/files/7134042/1.pdf)
+<img width="1395" alt="Screenshot 2021-09-09 at 12 08 22 PM" src="https://user-images.githubusercontent.com/72154593/132635481-f51561a3-4a59-4ce8-9c5b-eee0e9573c1d.png">
