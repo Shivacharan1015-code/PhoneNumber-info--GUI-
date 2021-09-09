@@ -16,4 +16,4 @@ and then simply cd into the directory and run the program, like you would any py
 
 This is a GUI based program.
 
-<img width="1395" alt="Screenshot 2021-09-09 at 12 08 22 PM" src="https://user-images.githubusercontent.com/72154593/132635481-f51561a3-4a59-4ce8-9c5b-eee0e9573c1d.png">
+<img width="1434" alt="Screenshot 2021-09-09 at 7 59 39 PM" src="https://user-images.githubusercontent.com/72154593/132704929-1a3ffb40-6c93-4015-81f1-347bfb5566d7.png">
