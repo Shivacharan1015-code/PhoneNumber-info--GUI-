@@ -1,3 +1,4 @@
+
 # PhoneNumber-info--GUI-
 
 This is a simple code, which lets you enter a phone number and it returns the some basic info about such as 'country' , 'location' , 'carrier'
@@ -13,3 +14,5 @@ You need to get a free/paid API key from https://numverify.com and paste that on
 and then simply cd into the directory and run the program, like you would any python program.
 
 This is a GUI based program.
+
+[1.pdf](https://github.com/Shivacharan1015-code/PhoneNumber-info-GUI/files/7134042/1.pdf)
